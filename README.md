@@ -26,7 +26,8 @@ my-agent-skills/
 | Skill | Descrição |
 |-------|-----------|
 | [`commit-detalhado`](./skills/commit-detalhado/SKILL.md) | Padronização rigorosa de commits em Português seguindo *Conventional Commits* com escopo, corpo explicativo, arquivos alterados e impacto. |
-| [`delphi-engenheiro`](./skills/delphi-engenheiro/SKILL.md) | Padrão de pensamento e execução para desenvolvimento, manutenção e boas práticas em Delphi (10.1 Berlin) e Firebird 5.0. |
+| [`delphi-engenheiro`](./skills/delphi-engenheiro/SKILL.md) | Padrão de pensamento e execução para desenvolvimento, manutenção e boas práticas em Delphi (Delphi 11) e Firebird 5.0. |
+| [`ponytail`](./skills/ponytail/SKILL.md) | Modo desenvolvedor sênior pragmático e eficiente. Foco em menor diff funcional, reutilização de código existente e correção na causa raiz. |
 
 ---
 
