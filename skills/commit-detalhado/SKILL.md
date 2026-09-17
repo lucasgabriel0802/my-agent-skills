@@ -1,6 +1,6 @@
 ---
 name: commit-detalhado
-description: "Use sempre que o usuário pedir para gerar, revisar ou melhorar uma mensagem de commit git. Acionar para frases como 'gera o commit', 'mensagem de commit', 'escreve o commit', 'como commitar essa mudança', ou quando o usuário descrever o que mudou no código e precisar registrar. Produz commits em Português seguindo Conventional Commits, com título, corpo explicativo, arquivos alterados e impacto/breaking changes."
+description: "Use sempre que o usuário pedir para gerar, revisar ou melhorar uma mensagem de commit git. Acionar para frases como 'gera o commit', 'mensagem de commit', 'escreve o commit', 'como commitar essa mudança', ou quando o usuário descrever o que mudou no código e precisar registrar. Inclui verificação obrigatória de segurança e dados sensíveis antes de commitar. Produz commits em Português seguindo Conventional Commits, com título, corpo explicativo, arquivos alterados e impacto/breaking changes."
 ---
 
 # Commit Detalhado — Padrão de Mensagem Git
@@ -72,17 +72,34 @@ Impacto:
 
 ---
 
+## 🔒 Verificação Obrigatória de Segurança e Dados Sensíveis
+
+Antes de gerar qualquer mensagem ou efetivar o commit, é **obrigatório inspecionar o diff** para garantir que nenhum dado confidencial esteja sendo adicionado acidentalmente:
+
+- **Credenciais e Senhas**: senhas *hardcoded*, senhas de bancos de dados (ex: `masterkey`, etc.), logins e senhas de teste.
+- **Segredos e Tokens**: chaves de API (*API keys*), *secrets* de serviços de terceiros, tokens JWT, *bearer tokens*, chaves de webhook.
+- **Certificados e Chaves Privadas**: arquivos `.pfx`, `.p12`, `.key`, `.pem`, ou senhas de certificados digitais A1/A3.
+- **Dados Pessoais ou de Clientes (LGPD)**: CPFs, CNPJs reais em arquivos de teste/seeders, dados bancários, números de cartão, nomes e contatos de clientes.
+- **Infraestrutura e Redes**: *connection strings* completas de produção/homologação, IPs internos, URLs privadas com credenciais embutidas.
+- **Arquivos Temporários ou de Ambiente**: arquivos `.env`, dumps de banco de dados (`.sql`, `.fdb`), logs contendo payloads reais ou arquivos `.ini` com parâmetros sigilosos.
+
+> [!CAUTION]
+> **Se qualquer dado sensível for detectado no diff, o commit deve ser IMEDIATAMENTE INTERROMPIDO**, alertando o usuário sobre o arquivo e a linha afetada para que o conteúdo seja removido antes de prosseguir.
+
+---
+
 ## Processo ao gerar um commit
 
 - **Manter commits granulares e pequenos**: Um commit por responsabilidade (ex: um commit para lógica de negócio, outro para UI).
 - **Sempre confirmar com o usuário**: Sugerir as mensagens de commit e aguardar a aprovação do usuário para efetivar.
 
-1. **Entender a mudança** — ler o diff ou a descrição fornecida pelo usuário antes de escrever qualquer coisa
-2. **Classificar o tipo** — escolher o tipo Conventional Commits que melhor representa a intenção
-3. **Redigir o título** — claro, no imperativo, dentro de 72 caracteres
-4. **Escrever o corpo** — focar no porquê, com contexto suficiente para que outra pessoa entenda meses depois
-5. **Listar arquivos** — apenas os relevantes
-6. **Avaliar impacto** — pensar se a mudança afeta algo além do ponto alterado
+1. **Verificação de segurança** — inspecionar o diff para garantir que não há dados sensíveis, credenciais ou segredos antes de prosseguir
+2. **Entender a mudança** — ler o diff ou a descrição fornecida pelo usuário antes de escrever qualquer coisa
+3. **Classificar o tipo** — escolher o tipo Conventional Commits que melhor representa a intenção
+4. **Redigir o título** — claro, no imperativo, dentro de 72 caracteres
+5. **Escrever o corpo** — focar no porquê, com contexto suficiente para que outra pessoa entenda meses depois
+6. **Listar arquivos** — apenas os relevantes
+7. **Avaliar impacto** — pensar se a mudança afeta algo além do ponto alterado
 
 Se a descrição do usuário for vaga (ex: "fiz umas correções"), **perguntar antes de gerar** o que exatamente foi alterado e qual era o problema — um commit vago não serve de nada no histórico.
 
