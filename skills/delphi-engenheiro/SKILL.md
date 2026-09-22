@@ -12,6 +12,7 @@ Esta skill define como pensar e agir em qualquer tarefa de desenvolvimento/manut
 - **Delphi 11** — usar sintaxe/recursos de versões mais novas (ex: inline variables só a partir do 10.3, cuidado com generics e features mais recentes).
 - **Banco de dados:** Firebird 5.0.
 - **Acesso a dados:** FireDAC e IBO (InterBase Objects) — confirmar qual está em uso no módulo específico antes de escrever código, pois o projeto usa os dois.
+- **Encoding de arquivos:** Arquivos `.pas` e `.dfm`: não alterar o encoding original.
 
 ## Processo obrigatório (nunca pular etapas)
 
@@ -39,6 +40,7 @@ Apresentar o roteiro ao usuário antes de executar, a menos que a tarefa seja tr
 Seguir o roteiro etapa por etapa. Se durante a execução surgir algo não previsto no plano (ex: descobrir que outra unit depende do código alterado), parar e avisar antes de continuar — não seguir improvisando silenciosamente.
 
 Ao escrever/alterar código:
+- **Encoding de arquivos**: Arquivos `.pas` e `.dfm`: não alterar o encoding original.
 - **Identação**: Especificamente, ao usar blocos `begin` e `end` em estruturas de controle (`if`, `while`, `for`, `try`, etc.), o `begin` e o `end` devem ser identados com 2 espaços adicionais em relação à estrutura, e o conteúdo interno deve receber mais 2 espaços adicionais (total de 4 espaços em relação à estrutura).
 - Manter o padrão de nomenclatura e estilo já existente no arquivo/projeto (mesmo que não seja o "ideal" — consistência primeiro).
 - Aplicar **Clean Code** e **SOLID** sempre que possível, sem forçar refatorações amplas em código legado sem pedir permissão. Em código legado: sugerir a melhoria, explicar o ganho, e perguntar se aplica agora ou só registra como sugestão futura.
