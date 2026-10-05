@@ -27,6 +27,7 @@ my-agent-skills/
 |-------|-----------|
 | [`commit-detalhado`](./skills/commit-detalhado/SKILL.md) | Padronização rigorosa de commits em Português seguindo *Conventional Commits* com escopo, corpo explicativo, arquivos alterados e impacto. |
 | [`delphi-engenheiro`](./skills/delphi-engenheiro/SKILL.md) | Padrão de pensamento e execução para desenvolvimento, manutenção e boas práticas em Delphi (Delphi 11) e Firebird 5.0. |
+| [`lean-flow`](./skills/lean-flow/SKILL.md) | Fluxo cirúrgico de alta precisão e baixo consumo de tokens (estilo Matt Pocock + Ponytail). Sabatinada seletiva, Micro-Specs (<25 linhas), TDD e correção de bugs/erros de tela na causa raiz. |
 | [`ponytail`](./skills/ponytail/SKILL.md) | Modo desenvolvedor sênior pragmático e eficiente. Foco em menor diff funcional, reutilização de código existente e correção na causa raiz. |
 
 ---
@@ -34,6 +35,18 @@ my-agent-skills/
 ## 🔄 Como Sincronizar em uma Nova Máquina
 
 Ao clonar este repositório em um novo computador com Antigravity IDE, conecte a pasta `skills` à pasta de configuração global do agente:
+
+### No Linux / macOS (Bash):
+```bash
+# 1. Clone o repositório
+git clone https://github.com/lucasgabriel0802/my-agent-skills.git "$HOME/my-agent-skills"
+
+# 2. Garanta que o diretório ~/.gemini/config exista
+mkdir -p "$HOME/.gemini/config"
+
+# 3. Crie o link simbólico para a pasta skills
+ln -s "$HOME/my-agent-skills/skills" "$HOME/.gemini/config/skills"
+```
 
 ### No Windows (PowerShell):
 ```powershell
