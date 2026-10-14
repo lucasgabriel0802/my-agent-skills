@@ -27,6 +27,7 @@ my-agent-skills/
 |-------|-----------|
 | [`commit-detalhado`](./skills/commit-detalhado/SKILL.md) | Padronização rigorosa de commits em Português seguindo *Conventional Commits* com escopo, corpo explicativo, arquivos alterados e impacto. |
 | [`delphi-engenheiro`](./skills/delphi-engenheiro/SKILL.md) | Padrão de pensamento e execução para desenvolvimento, manutenção e boas práticas em Delphi (Delphi 11) e Firebird 5.0. |
+| [`firebird-master`](./skills/firebird-master/SKILL.md) | Especialista em banco de dados Firebird (versões 2.5 a 5.0). Análise de planos de execução (`PLAN`), identificação de `NATURAL SCAN`, estratégias de índices, prevenção de inchaço do `.fdb` (gap OAT/OIT), boas práticas e integração com Delphi. |
 | [`lean-flow`](./skills/lean-flow/SKILL.md) | Fluxo cirúrgico de alta precisão e baixo consumo de tokens (estilo Matt Pocock + Ponytail). Sabatinada seletiva, Micro-Specs (<25 linhas), TDD e correção de bugs/erros de tela na causa raiz. |
 | [`ponytail`](./skills/ponytail/SKILL.md) | Modo desenvolvedor sênior pragmático e eficiente. Foco em menor diff funcional, reutilização de código existente e correção na causa raiz. |
 | [`requirements-copilot`](./skills/requirements-copilot/SKILL.md) | Engenharia de requisitos e análise de solicitações/chamados. Converte inputs não estruturados em especificações INVEST, critérios Gherkin, gestão da pasta da demanda (`docs/demandas/`) e cards Jira. |
