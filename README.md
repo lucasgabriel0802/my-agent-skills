@@ -29,6 +29,8 @@ my-agent-skills/
 | [`delphi-engenheiro`](./skills/delphi-engenheiro/SKILL.md) | Padrão de pensamento e execução para desenvolvimento, manutenção e boas práticas em Delphi (Delphi 11) e Firebird 5.0. |
 | [`lean-flow`](./skills/lean-flow/SKILL.md) | Fluxo cirúrgico de alta precisão e baixo consumo de tokens (estilo Matt Pocock + Ponytail). Sabatinada seletiva, Micro-Specs (<25 linhas), TDD e correção de bugs/erros de tela na causa raiz. |
 | [`ponytail`](./skills/ponytail/SKILL.md) | Modo desenvolvedor sênior pragmático e eficiente. Foco em menor diff funcional, reutilização de código existente e correção na causa raiz. |
+| [`requirements-copilot`](./skills/requirements-copilot/SKILL.md) | Engenharia de requisitos e análise de solicitações/chamados. Converte inputs não estruturados em especificações INVEST, critérios Gherkin, gestão da pasta da demanda (`docs/demandas/`) e cards Jira. |
+
 
 ---
 
