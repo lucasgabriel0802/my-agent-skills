@@ -218,9 +218,19 @@ Quando o usuário apresentar uma query, procedure ou problema de performance, si
 
 Quando o servidor MCP de Firebird estiver configurado e ativo no ambiente, o agente deve priorizar o uso das ferramentas MCP para validar dados reais:
 
-- `fb_explain_plan`: Use para obter o `PLAN` oficial compilado pelo engine.
-- `fb_inspect_table`: Use para inspecionar tipos de campos, chaves primárias, estrangeiras e seletividade real dos índices existentes (`RDB$STATISTICS`).
-- `fb_query_stats`: Use para comparar o número de leituras indexadas vs leituras naturais antes e depois da otimização.
-- `fb_database_info`: Use para checar o gap OIT/OAT, tamanho de página e versão exata do engine.
+- **Gerenciamento Multi-Bancos:**
+  - `fb_list_databases`: Lista todos os bancos de dados configurados no projeto atual (`.firebird-mcp.json`).
+  - `fb_use_database(alias)`: Alterna o banco de dados padrão ativo.
+  - Todas as ferramentas aceitam o parâmetro opcional `db_alias` para operar diretamente em um banco específico (ex: `fb_query(sql=..., db_alias="auditoria")`).
+- **Inspeção e Metadados:**
+  - `fb_list_tables` / `fb_list_views` / `fb_list_procedures` / `fb_list_generators`: Listagem rápida de objetos.
+  - `fb_inspect_table(table_name, db_alias)`: Inspeciona colunas, domínios, chaves primárias/estrangeiras e seletividade de índices (`RDB$STATISTICS`).
+- **Performance e Análise:**
+  - `fb_explain_plan(sql, db_alias)`: Extrai o plano de execução compilado (`PLAN`), detecta leituras sequenciais (`NATURAL SCAN`) e orienta sobre índices.
+  - `fb_database_health(db_alias)`: Diagnostica a saúde do banco via `MON$` (ODS, page size e gap entre OAT e Next Transaction).
+- **Execução Segura:**
+  - `fb_query(sql, limit, db_alias)`: Executa consultas `SELECT` estritamente de leitura com limite de linhas e commit imediato.
+  - `fb_execute_dml(sql, db_alias)`: Executa comandos `INSERT`, `UPDATE`, `DELETE`.
+  - `fb_execute_ddl(ddl, db_alias)`: Executa comandos estruturais `CREATE INDEX`, `ALTER TABLE`, etc.
 
 Caso o MCP não esteja conectado ou o ambiente seja puramente de código/Delphi offline, **execute a análise estática completa com as heurísticas desta skill**.
