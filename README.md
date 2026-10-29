@@ -26,6 +26,7 @@ my-agent-skills/
 | Skill | Descrição |
 |-------|-----------|
 | [`commit-detalhado`](./skills/commit-detalhado/SKILL.md) | Padronização rigorosa de commits em Português seguindo *Conventional Commits* com escopo, corpo explicativo, arquivos alterados e impacto. |
+| [delphi-build-and-fix](./skills/delphi-build-and-fix/SKILL.md) | Automatiza a compilação de projetos Delphi via linha de comando (MSBuild/DCC) após qualquer edição de código, analisando erros (E/F) e corrigindo iterativamente até obter sucesso (exit code 0). |
 | [`delphi-engenheiro`](./skills/delphi-engenheiro/SKILL.md) | Padrão de pensamento e execução para desenvolvimento, manutenção e boas práticas em Delphi (Delphi 11) e Firebird 5.0. |
 | [`firebird-master`](./skills/firebird-master/SKILL.md) | Especialista em banco de dados Firebird (versões 2.5 a 5.0). Análise de planos de execução (`PLAN`), identificação de `NATURAL SCAN`, estratégias de índices, prevenção de inchaço do `.fdb` (gap OAT/OIT), boas práticas e integração com Delphi. |
 | [`lean-flow`](./skills/lean-flow/SKILL.md) | Fluxo cirúrgico de alta precisão e baixo consumo de tokens (estilo Matt Pocock + Ponytail). Sabatinada seletiva, Micro-Specs (<25 linhas), TDD e correção de bugs/erros de tela na causa raiz. |
